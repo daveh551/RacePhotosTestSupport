@@ -32,6 +32,14 @@ namespace RacePhotosTestSupport
 		    }
 	    }
 
+	    private static Race TestRace = new Race()
+		    {
+			    Distance = new Distance {Id = 3, RaceDistance = "5K"},
+			    DistanceId = 3,
+			    Event = new Event() {EventName = "Test", Id = 1},
+			    EventId = 1,
+			    Id = 1
+		    };
 	    private static PhotoServer.Domain.Photo[] testData =
 
 	    new PhotoServer.Domain.Photo []
@@ -39,11 +47,12 @@ namespace RacePhotosTestSupport
 		    new Photo
 			    {
 				    Id = new Guid("E0CAF539-5C32-432B-AAC4-B01CD4EABB3A"),
-				    Race = "Test",
+				    RaceId = 1,
+					Race = TestRace,
 				    Station = "FinishLine",
 				    Card = "1",
 				    Sequence = 1,
-				    Path = @"Test/FinishLine/1/001.JPG",
+				    Path = @"Test.5K/FinishLine/1/001.JPG",
 				    Hres = 3008,
 				    Vres = 2000,
 				    TimeStamp = new DateTime(2011, 10, 22, 8, 48, 59, 60)
@@ -51,11 +60,12 @@ namespace RacePhotosTestSupport
 		    new Photo
 			    {
 				    Id = new Guid("24249DF5-C9FF-4B17-A259-514586F07C6B"),
-				    Race = "Test",
+				    RaceId = 1,
+					Race = TestRace,
 				    Station = "FinishLine",
 				    Card = "1",
 				    Sequence = 3,
-				    Path = @"Test/FinishLine/1/003.JPG",
+				    Path = @"Test.5K/FinishLine/1/003.JPG",
 				    Hres = 3008,
 				    Vres = 2000,
 				    TimeStamp = new DateTime(2011, 10, 22, 8, 29, 0)
@@ -63,11 +73,12 @@ namespace RacePhotosTestSupport
 		    new Photo
 			    {
 				    Id = new Guid("E5034D6B-3B26-4F03-8F9E-0EA1F5BE55C7"),
-				    Race = "Test",
+				    RaceId = 1,
+					Race = TestRace,
 				    Station = "FinishLine",
 				    Card = "1",
 				    Sequence = 4,
-				    Path = @"Test/FinishLine/1/004.JPG",
+				    Path = @"Test.5K/FinishLine/1/004.JPG",
 				    Hres = 3008,
 				    Vres = 2000,
 				    TimeStamp = new DateTime(2011, 10, 22, 8, 29, 0)
