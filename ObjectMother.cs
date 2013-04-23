@@ -131,10 +131,9 @@ namespace RacePhotosTestSupport
 				var destFile = photoData.Path;
 				var fileName = Path.GetFileName(destFile);
 				var sourceFile = sourcePhotos.Where(p => p.Name.EndsWith(fileName)).Select(f => f.FullName).Single();
-				var destPath = Path.Combine(photoPath, destFile);
 				var fileStream = new FileStream(sourceFile, FileMode.Open);
 				var fileData = new BinaryReader(fileStream).ReadBytes((int) fileStream.Length);
-				provider.WriteFile(destPath, fileData);
+				provider.WriteFile(destFile, fileData);
 			}
 		}
 	}
