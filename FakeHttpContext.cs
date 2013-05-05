@@ -5,14 +5,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.SessionState;
 
 namespace RacePhotosTestSupport
 {
 	public class FakeHttpContext : HttpContextBase
 	{
+		private HttpSessionStateBase _session = new FakeSession();
 		public override HttpServerUtilityBase Server
 		{
 			get { return new FakeHttpServerUtility(); }
+		}
+
+		public override HttpSessionStateBase Session
+		{
+			get { return _session; }
 		}
 	}
 
@@ -31,5 +38,22 @@ namespace RacePhotosTestSupport
 				throw new ArgumentException(string.Format("path {0} does not start with \"~/\"", path));
 			}
 		}
+	}
+
+	public class FakeSession : HttpSessionStateBase
+	{
+		readonly Dictionary<string, object> _items = new Dictionary<string, object>();
+
+		public override object this[string name]
+		{
+			get
+			{
+				if (_items.ContainsKey(name))
+					return _items[name];
+				return null;
+			}
+			set { _items[name] = value; }
+		}
+	
 	}
 }
