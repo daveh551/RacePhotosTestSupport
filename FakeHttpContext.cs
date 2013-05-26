@@ -8,11 +8,8 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
-<<<<<<< HEAD
 using Moq;
-=======
 using System.Web.SessionState;
->>>>>>> 5186d5ff70b3c239dbbe04bfcf820b497efdba64
 
 namespace RacePhotosTestSupport
 {
@@ -34,9 +31,12 @@ namespace RacePhotosTestSupport
 		}
 
 		private IPrincipal _user;
+
 		public override System.Security.Principal.IPrincipal User
 		{
 			get { return _user; }
+		}
+
 		public override HttpSessionStateBase Session
 		{
 			get { return _session; }
