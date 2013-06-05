@@ -78,7 +78,14 @@ namespace RacePhotosTestSupport
 		    return numChanges;
 
 	    }
-    }
+
+
+
+		public void Dispose()
+		{
+			
+		}
+	}
 
    
 }
