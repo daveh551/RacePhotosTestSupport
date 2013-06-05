@@ -85,6 +85,12 @@ namespace RacePhotosTestSupport
 		{
 			
 		}
+
+
+		public void Update(object item)
+		{
+			throw new NotImplementedException();
+		}
 	}
 
    
